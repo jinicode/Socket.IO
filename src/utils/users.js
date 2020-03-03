@@ -5,7 +5,7 @@ const addUser = ({ id, username, room }) => {
     username = username.trim().toLowerCase()
     room = room.trim().toLowerCase()
 
-    // Validate the data
+    // Validate the data agar kuch bhi input field khali hai...
     if (!username || !room) {
         return {
             error: 'Username and room are required!'
@@ -34,8 +34,8 @@ const removeUser = (id) => {
     const index = users.findIndex((user) => user.id === id)
 
     if (index !== -1) {
-        return users.splice(index, 1)[0]
-    }
+        return users.splice(index, 1)[0]//splice returns an array of removed elements and we then remove element from [0] index as there is only one element
+        }
 }
 
 const getUser = (id) => {
